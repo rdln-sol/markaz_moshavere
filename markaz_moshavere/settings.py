@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'multiselectfield',
     'core'
 ]
 
@@ -77,11 +78,11 @@ WSGI_APPLICATION = 'markaz_moshavere.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': '3Ff-aACb6DGFeeEgGeffA4cbdAfA16-*',
-        'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT': '38430'
+        'NAME': 'markazdb',
+        'USER': 'abjoush',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 

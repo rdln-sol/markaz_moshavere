@@ -39,7 +39,7 @@ class Psychologist(models.Model):
         (3, 'سه‌شنبه'),
         (4, 'چهارشنبه'),
         (5, 'پنجشنبه'),
-    ))
+    ),max_choices = 6, max_length=6)
     specialty_field = models.CharField(max_length=255)
 
 
@@ -68,7 +68,7 @@ class Appointment(models.Model):
     ))
     available_status = models.BooleanField(default=True)
 
-class treatment_plan(models.Model):
+class Treatment_Plan(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
     goal = models.CharField(max_length=100)
@@ -84,17 +84,21 @@ class Reception(models.Model):
 
 class Profit(models.Model):
     psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
-    amount = models.DecimalField()
-    date = models.DateField(default=date.today())
+    amount = models.DecimalField(decimal_places=2, max_digits=100)
+    date = models.DateField(default=date.today)
 
 class Conditions(models.Model):
     name = models.CharField(max_length=100)
-    patient = models.ManyToManyField(Patient, on_delete=models.CASCADE)
+    patient = models.ManyToManyField(Patient, through="patient_conditions")
+
+class patient_conditions(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    conditions = models.ForeignKey(Conditions, on_delete=models.CASCADE)
 
 class Medication(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
-    medication_name = models.CharField(max_field=100)
+    medication_name = models.CharField(max_length=100)
     dosage = models.CharField(max_length=63)
     frequency = models.CharField(max_length=255)
     start_time = models.DateField(default=datetime.now)
