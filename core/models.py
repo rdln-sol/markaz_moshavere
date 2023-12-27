@@ -9,38 +9,6 @@ class Patient(models.Model):
     f_name = models.CharField(max_length=255, blank=False, null=False)
     l_name = models.CharField(max_length=255, blank=False, null=False)
     birth_date = models.DateField()
-    first_apt = models.DateField()
-    marital_status = models.PositiveSmallIntegerField(
-        choices = (
-            (1, 'مجرد'),
-            (2, 'نامزد'),
-            (3, 'عقد'),
-            (4, 'متأهل'),
-            (5, 'ازدواج موقت'),
-            (6, 'تعدد زوجات'),
-            (7, 'ازدواج مجدد'),
-            (8, 'متارکه'),
-            (9, 'مطلقه'),
-            (10, 'بیوه')
-        )
-    )
-    educational_status = models.PositiveSmallIntegerField(
-        choices = (
-            (1, '(سنین بالا)بی سواد'),
-            (2, 'زیر سن مدرسه'),
-            (3, 'پیش دبستانی'),
-            (5, 'ابتدایی(دانش آموز)'),
-            (6, '(دانش آموز)راهنمایی'),
-            (7, '(دانش آموز)دبیرستان'),
-            (8, 'ابتدایی(ترک تحصیل)'),
-            (9, 'راهنمایی(ترک تحصیل)'),
-            (10, 'دبیرستان(ترک تحصیل)'),
-            (11, 'دیپلم و پیش دانشگاهی'),
-            (12, 'دارای مدرک دانشگاهی'),
-            (13, 'دانشجو'),
-            (14, 'حوزوی')
-        )
-    )
     job = models.CharField(max_length=255)
     address = models.CharField(max_length=255, blank=True, null=True)
     phone_number = models.CharField(max_length=255, blank=True, null=True)
@@ -113,16 +81,16 @@ class Reception(models.Model):
     psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
 
 
-class profit(models.Model):
+class Profit(models.Model):
     psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
     amount = models.DecimalField()
     date = models.DateField(default=date.today())
 
-class conditions(models.Model):
+class Conditions(models.Model):
     name = models.CharField(max_length=100)
     patient = models.ManyToManyField(Patient, on_delete=models.CASCADE)
 
-class medication(models.Model):
+class Medication(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
     medication_name = models.CharField(max_field=100)
@@ -130,3 +98,40 @@ class medication(models.Model):
     frequency = models.CharField(max_length=255)
     start_time = models.DateField(default=datetime.now)
     end_time = models.DateField()
+
+class Dossier(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
+    medication = models.ForeignKey(Medication, on_delete=models.CASCADE)
+    first_apt = models.DateField(default=date.today)
+    marital_status = models.PositiveSmallIntegerField(
+        choices = (
+            (1, 'مجرد'),
+            (2, 'نامزد'),
+            (3, 'عقد'),
+            (4, 'متأهل'),
+            (5, 'ازدواج موقت'),
+            (6, 'تعدد زوجات'),
+            (7, 'ازدواج مجدد'),
+            (8, 'متارکه'),
+            (9, 'مطلقه'),
+            (10, 'بیوه')
+        )
+    )
+    educational_status = models.PositiveSmallIntegerField(
+        choices = (
+            (1, '(سنین بالا)بی سواد'),
+            (2, 'زیر سن مدرسه'),
+            (3, 'پیش دبستانی'),
+            (5, 'ابتدایی(دانش آموز)'),
+            (6, '(دانش آموز)راهنمایی'),
+            (7, '(دانش آموز)دبیرستان'),
+            (8, 'ابتدایی(ترک تحصیل)'),
+            (9, 'راهنمایی(ترک تحصیل)'),
+            (10, 'دبیرستان(ترک تحصیل)'),
+            (11, 'دیپلم و پیش دانشگاهی'),
+            (12, 'دارای مدرک دانشگاهی'),
+            (13, 'دانشجو'),
+            (14, 'حوزوی')
+        )
+    )
