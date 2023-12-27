@@ -66,6 +66,7 @@ class Appointment(models.Model):
         (1, 'نقدی'),
         (2,'کارت')
     ))
+    available_status = models.BooleanField(default=True)
 
 class treatment_plan(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
