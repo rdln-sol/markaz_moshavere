@@ -87,13 +87,13 @@ class Profit(models.Model):
     amount = models.DecimalField(decimal_places=2, max_digits=100)
     date = models.DateField(default=date.today)
 
-class Conditions(models.Model):
+class Condition(models.Model):
     name = models.CharField(max_length=100)
     patient = models.ManyToManyField(Patient, through="patient_conditions")
 
 class patient_conditions(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    conditions = models.ForeignKey(Conditions, on_delete=models.CASCADE)
+    conditions = models.ForeignKey(Condition, on_delete=models.CASCADE)
 
 class Medication(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
