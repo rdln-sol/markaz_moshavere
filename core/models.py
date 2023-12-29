@@ -89,19 +89,11 @@ class patient_conditions(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     conditions = models.ForeignKey(Condition, on_delete=models.CASCADE)
 
-class Medication(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
-    medication_name = models.CharField(max_length=100)
-    dosage = models.CharField(max_length=63)
-    frequency = models.CharField(max_length=255)
-    start_time = models.DateField(default=datetime.now)
-    end_time = models.DateField()
+
 
 class Dossier(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
-    medication = models.ForeignKey(Medication, on_delete=models.CASCADE)
     birth_date = models.DateField(default=date.today)
     job = models.CharField(max_length=255, blank=True, null=True)
     address = models.CharField(max_length=255, blank=True, null=True)
@@ -139,7 +131,16 @@ class Dossier(models.Model):
     )
 
 class Treatment_Plan(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    dossier = models.ForeignKey(Dossier, on_delete=models.CASCADE, default=1)
     psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
     goal = models.CharField(max_length=100)
     interventions = models.CharField(max_length=100)
+
+class Medication(models.Model):
+    dossier = models.ForeignKey(Dossier, on_delete=models.CASCADE, default=1)
+    psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
+    medication_name = models.CharField(max_length=100)
+    dosage = models.CharField(max_length=63)
+    frequency = models.CharField(max_length=255)
+    start_time = models.DateField(default=datetime.now)
+    end_time = models.DateField()
