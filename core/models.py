@@ -1,4 +1,5 @@
 
+from email.policy import default
 from django.db import models
 from multiselectfield import MultiSelectField
 from datetime import date, datetime
@@ -8,9 +9,6 @@ from datetime import date, datetime
 class Patient(models.Model):
     f_name = models.CharField(max_length=255, blank=False, null=False)
     l_name = models.CharField(max_length=255, blank=False, null=False)
-    birth_date = models.DateField()
-    job = models.CharField(max_length=255)
-    address = models.CharField(max_length=255, blank=True, null=True)
     phone_number = models.CharField(max_length=255, blank=True, null=True)
     referal_source = MultiSelectField(choices = (
             (1, 'جراید'),
@@ -68,11 +66,7 @@ class Appointment(models.Model):
     ))
     available_status = models.BooleanField(default=True)
 
-class Treatment_Plan(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
-    goal = models.CharField(max_length=100)
-    interventions = models.CharField(max_length=100)
+
 
 class Reception(models.Model):
     f_name = models.CharField(max_length=100)
@@ -108,6 +102,9 @@ class Dossier(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
     medication = models.ForeignKey(Medication, on_delete=models.CASCADE)
+    birth_date = models.DateField(default=date.today)
+    job = models.CharField(max_length=255, blank=True, null=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
     first_apt = models.DateField(default=date.today)
     marital_status = models.PositiveSmallIntegerField(
         choices = (
@@ -140,3 +137,9 @@ class Dossier(models.Model):
             (14, 'حوزوی')
         )
     )
+
+class Treatment_Plan(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    psychologist = models.ForeignKey(Psychologist, on_delete=models.CASCADE)
+    goal = models.CharField(max_length=100)
+    interventions = models.CharField(max_length=100)
