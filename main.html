@@ -24,9 +24,6 @@
     text-shadow: 0.2px 0.2px black;
   }
 
-.body {
-    background: linear-gradient(to bottom, #ffecb8, #67553b);
-  }
   .card {
     transition: transform 0.3s ease;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
@@ -40,27 +37,27 @@
 </style>
   <body>
     <div class="container">
-      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" style="background: linear-gradient(45deg, #cfbaf0, #a3c4f3, #90dbf4);border-radius: 20px;">
         <div class="col-md-3 mb-2 mb-md-0">
           <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
           </a>
         </div>
     
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2">درباره ما</a></li>
-          <li><a href="#" class="nav-link px-2">مشاوران</a></li>
-          <li><a href="#" class="nav-link px-2">رزرو وقت</a></li>
+          <li><a href="#" class="nav-link px-3">درباره ما</a></li>
+          <li><a href="#" class="nav-link px-3">مشاوران</a></li>
+          <li><a href="#" class="nav-link px-3">رزرو وقت</a></li>
         </ul>
     
         <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-outline-primary me-2">ورود</button>
+          <button type="button" class="btn btn-outline-primary me-4">ورود</button>
         </div>
       </header>
     </div>
         <div class="container col-xxl-8 px-4 py-5">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
               <div class="col-10 col-sm-8 col-lg-6">
-                <img src="png/clinic.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                <img src="png/Bahonar_university.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
               </div>
               <div class="col-lg-6">
                 <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">کلینیک دیزناتس</h1>
@@ -76,8 +73,8 @@
         <div class="row px-4py-5" style="padding-bottom:3cm;" >
             <div class="col-lg-2"></div>
             <div class="col-lg-3 ">
-                <div class="card" style="width: 100%">
-                    <img class="card-img-top" src="png/clinic.jpg" alt="Card image cap">
+                <div class="card" style="width: 100%;background-color: #cfbaf0;">
+                    <img class="card-img-top" src="png/ardalan.png" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">دکتر اردلان سلطانزاده</h5>
                       <p class="card-text">متخصص کودک و نوجوان</p>
@@ -86,8 +83,8 @@
                   </div>
             </div>
             <div class="col-lg-3 ">
-                <div class="card" style="width:100%">
-                    <img class="card-img-top" src="png/clinic.jpg" alt="Card image cap">
+                <div class="card" style="width:100%;background-color: #a3c4f3;">
+                    <img class="card-img-top" src="png/sepehr.png" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">دکتر سپهر بزمی</h5>
                       <p class="card-text">مشاور تحصیلی و برنامه ریزی</p>
@@ -96,23 +93,23 @@
                   </div>
             </div>
             <div class="col-lg-3 ">
-                <div class="card" style="width: 100%">
-                    <img class="card-img-top" src="png/clinic.jpg" alt="Card image cap">
+                <div class="card" style="width: 100%;background-color: #90dbf4 ">
+                    <img class="card-img-top" src="png/ardalan2.png" alt="Card image cap">
                     <div class="card-body">
-                      <h5 class="card-title">دکتری</h5>
+                      <h5 class="card-title">دکتر اردوان زرندی</h5>
                       <p class="card-text">متخصص اعصاب و روان</p>
                       <a href="#" class="btn btn-primary">رزرو وقت</a>
                     </div>
                   </div>
             </div>
         </div>
-        <div class="container px-4py-5"  id="custom-cards" style="background-color: #219ebc; margin-bottom: 3cm;">
+        <div class="container px-4py-5"  id="custom-cards" style="margin-bottom: 3cm;">
           <h2 class="pb-2 border-bottom" style="margin-bottom: 10px;">خدمات مرکز روانشانسی و کلینیک روانشانسی</h2>
           <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5" >
             <div class="col">
-              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                  <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">مشاوره خانواده مشاوره ازدواج و طلاق، زوج درمانگر خوب و خانواده درمانی</h3>
+              <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg" style="background-color: #90dbf4">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                  <h3 class="pt-3 mt-3 mb-4 display-6 lh-1 fw-bold">مرکز مشاوره تحصیلی، مشاوره کنکور، شغلی و موفقیت</h3>
                   <ul class="d-flex list-unstyled mt-auto">
                     <li class="d-flex align-items-center me-3">
                       <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
@@ -128,9 +125,9 @@
             </div>
       
             <div class="col">
-              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                  <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">مرکز تست هوش و استعدادیابی کودک و نوجوان و تست شخصیت</h3>
+              <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg" style="background-color: #a3c4f3 ">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                  <h3 class="pt-3 mt-3 mb-4 display-6 lh-1 fw-bold">مرکز تست هوش و استعدادیابی کودک و نوجوان و تست شخصیت</h3>
                   <ul class="d-flex list-unstyled mt-auto">
                     
                     <li class="d-flex align-items-center me-3">
@@ -147,9 +144,9 @@
             </div>
       
             <div class="col">
-              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+              <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg" style="background-color: #cfbaf0;">
                 <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                  <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">مرکز مشاوره و روانشناسی کودک و مشاوره نوجوان، روانشناس کودک</h3>
+                  <h3 class="pt-3 mt-3 mb-4 display-6 lh-1 fw-bold">مرکز مشاوره و روانشناسی کودک و مشاوره نوجوان، روانشناس کودک</h3>
                   <ul class="d-flex list-unstyled mt-auto">
                   
                     <li class="d-flex align-items-center me-3">
@@ -165,6 +162,48 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="container" style="background: linear-gradient(45deg, #cfbaf0, #a3c4f3, #90dbf4);border-radius: 20px;">
+          <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+            <div class="col mb-3">
+              <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+              <p class="text-body-secondary">© 2023</p>
+            </div>
+        
+        
+            <div class="col mb-3">
+              <h5>شبکه های اجتمایی ما</h5>
+              <ul class="nav flex-column justify-content-end">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Telegram</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Instagram</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Whatsapp</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Eitaa</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Rubika</a></li>
+              </ul>
+            </div>
+        
+        
+            <div class="col mb-3">
+              <h5>کلینیک را پیدا کنید</h5>
+              <ul class="nav flex-column justify-content-end">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Snapp</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Neshan</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Bale</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Google maps</a></li>
+              </ul>
+            </div>
+        
+            <div class="col mb-3">
+              <h5>با ما تماس بگیرید</h5>
+              <ul class="nav flex-column justify-content-end">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">09017702769</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">09039056050</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">پاسخگویی از ساعت 10 الی 21</a></li>
+              </ul>
+            </div>
+          </footer>
         </div>
         </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
