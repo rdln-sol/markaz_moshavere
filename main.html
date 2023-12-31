@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en" P align="right">
+  <>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<style>
+.btn {
+                box-shadow: none;
+                transition: box-shadow 0.3s ease;
+              }
+            
+.btn:hover {
+                box-shadow: 0 0 10px 3px rgba(60, 180, 255, 0.5);
+              }
+          
+.nav-link {
+    transition: box-shadow 0.3s ease;
+  }
+
+.nav-link:hover {
+   
+    text-shadow: 0.2px 0.2px black;
+  }
+
+.body {
+    background: linear-gradient(to bottom, #ffecb8, #67553b);
+  }
+  .card {
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    background-color: #bde0fe;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+</style>
+  <body>
+    <div class="container">
+      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+          </a>
+        </div>
+    
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2">درباره ما</a></li>
+          <li><a href="#" class="nav-link px-2">مشاوران</a></li>
+          <li><a href="#" class="nav-link px-2">رزرو وقت</a></li>
+        </ul>
+    
+        <div class="col-md-3 text-end">
+          <button type="button" class="btn btn-outline-primary me-2">ورود</button>
+        </div>
+      </header>
+    </div>
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="png/clinic.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">کلینیک دیزناتس</h1>
+                <p class="lead">مرکز مشاوره و مرکز روانشناسی آبجوش تخصصی ترین و بزرگترین مرکز روانشناسی و کلینیک روانشناسی در کرمان هست که خدمات ارزیابی و درمان اختلالات روانشناسی کودک، مشاوره روانشناسی نوجوان و بزرگسال و همچنین مشاوره خانواده، مشاوره ازدواج، مشاوره تحصیلی و شغلی، و فردی را در بالاترین کیفیت ممکن زیر نظر دکتر روانشناس خوب، باتجربه و متخصص در همان حیطه ارائه می دهد. منتظر حضور گرم شما در کلینیک روانشناسی آبجوش هستیم.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                  <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">رزرو وقت</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row px-4py-5" style="padding-bottom:3cm;" >
+            <div class="col-lg-2"></div>
+            <div class="col-lg-3 ">
+                <div class="card" style="width: 100%">
+                    <img class="card-img-top" src="png/clinic.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">دکتر اردلان سلطانزاده</h5>
+                      <p class="card-text">متخصص کودک و نوجوان</p>
+                      <a href="#" class="btn btn-primary">رزرو وقت</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-3 ">
+                <div class="card" style="width:100%">
+                    <img class="card-img-top" src="png/clinic.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">دکتر سپهر بزمی</h5>
+                      <p class="card-text">مشاور تحصیلی و برنامه ریزی</p>
+                      <a href="#" class="btn btn-primary">رزرو وقت</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-3 ">
+                <div class="card" style="width: 100%">
+                    <img class="card-img-top" src="png/clinic.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">دکتری</h5>
+                      <p class="card-text">متخصص اعصاب و روان</p>
+                      <a href="#" class="btn btn-primary">رزرو وقت</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="container px-4py-5"  id="custom-cards" style="background-color: #219ebc; margin-bottom: 3cm;">
+          <h2 class="pb-2 border-bottom" style="margin-bottom: 10px;">خدمات مرکز روانشانسی و کلینیک روانشانسی</h2>
+          <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5" >
+            <div class="col">
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                  <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">مشاوره خانواده مشاوره ازدواج و طلاق، زوج درمانگر خوب و خانواده درمانی</h3>
+                  <ul class="d-flex list-unstyled mt-auto">
+                    <li class="d-flex align-items-center me-3">
+                      <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                      <small>کرمان</small>
+                    </li>
+                    <li class="d-flex align-items-center">
+                      <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                      <small>خیابان شفا، ساختمان تجاری پزشکی شفا،واحد دوم</small>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col">
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                  <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">مرکز تست هوش و استعدادیابی کودک و نوجوان و تست شخصیت</h3>
+                  <ul class="d-flex list-unstyled mt-auto">
+                    
+                    <li class="d-flex align-items-center me-3">
+                      <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                      <small>کرمان</small>
+                    </li>
+                    <li class="d-flex align-items-center">
+                      <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                      <small>خیابان شفا، ساختمان تجاری پزشکی شفا،واحد سوم</small>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col">
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                  <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">مرکز مشاوره و روانشناسی کودک و مشاوره نوجوان، روانشناس کودک</h3>
+                  <ul class="d-flex list-unstyled mt-auto">
+                  
+                    <li class="d-flex align-items-center me-3">
+                      <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                      <small>کرمان</small>
+                    </li>
+                    <li class="d-flex align-items-center">
+                      <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                      <small>خیابان شفا، ساختمان تجاری پزشکی شفا،واحد دوم</small>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
