@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en" P align="right">
+    <script src="/docs/5.3/assets/js/color-modes.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/list-groups/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Appointment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="../dist/jalalidatepicker.js"></script>
+    <link rel="stylesheet" href="../dist/jalalidatepicker.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css">
+  <script type="text/javascript" src="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"></script>
+    
+    <style>
+      .list-group-item:hover {
+        transform: scale(1.1);
+      }
+
+      
+  .box {
+    background: linear-gradient(45deg, #cfbaf0, #a3c4f3, #90dbf4);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 auto 20px;
+    width: fit-content;
+    box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.2);
+}
+.centered-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Set the desired background color */
+  }
+  .card-container {
+     /* Set the desired border properties */
+    border-radius: 1rem;
+    box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #cfbaf0, #a3c4f3, #90dbf4);
+    width: 21.7cm;
+    padding: 2rem;
+    text-align: right;
+  }
+</style>
+    </style>
+      
+      <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" style="margin-top: 1cm;background: linear-gradient(45deg, #cfbaf0, #a3c4f3, #90dbf4);border-radius: 20px;">
+          <div class="col-md-3 mb-2 mb-md-0">
+            <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+            </a>
+          </div>
+      
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-3">درباره ما</a></li>
+            <li><a href="#" class="nav-link px-3">مشاوران</a></li>
+            <li><a href="#" class="nav-link px-3">رزرو وقت</a></li>
+          </ul>
+      
+          <div class="col-md-3 text-end">
+            <button type="button" class="btn btn-outline-primary me-4">ورود</button>
+          </div>
+        </header>
+      </div>
+      
+    <body >
+
+    
+     
+        
+        <div class="box d-flex flex-column vh-70 justify-content-start align-items-center" style="width: 21.8cm;">
+          <h2 class="text-center mb-4">انتخاب مشاور</h2>
+          <div class="list-group w-40" style="box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.5);">
+            <label class="list-group-item d-flex gap-3 align-items-center" style="background-color: #cfbaf0;">
+              <img src="png/ardalanlogo.png" alt="Picture 1" class="img-thumbnail flex-shrink-0 remove-border" style="width: 50px; height: 50px;">
+              <span class="pt-1 form-checked-content text-right" style="flex-grow: 1;">
+                <strong>دکتر اردلان سلطانزاده</strong>
+              </span>
+              <input type="radio" class="form-check-input" name="task" value="" style="font-size: 1.375em;">
+            </label>
+            <label class="list-group-item d-flex gap-3 align-items-center" style="background-color: #a3c4f3;">
+              <img src="png/sepehrlogo.png" alt="Picture 2" class="img-thumbnail flex-shrink-0 remove-border" style="width: 50px; height: 50px;">
+              <span class="pt-1 form-checked-content text-right" style="flex-grow: 1;">
+                <strong>دکتر سپهر بزمی</strong>
+              </span>
+              <input type="radio" class="form-check-input" name="task" value="" style="font-size: 1.375em;">
+            </label>
+            <label class="list-group-item d-flex gap-3 align-items-center" style="background-color: #90dbf4;">
+              <img src="png/ardalan2logo.png" alt="Picture 3" class="img-thumbnail flex-shrink-0 remove-border" style="width: 50px; height: 50px;">
+              <span class="pt-1 form-checked-content text-right" style="flex-grow: 1;">
+                <strong>دکتر اردوان زرندی</strong>
+              </span>
+              <input type="radio" class="form-check-input" name="task" value="" style="font-size: 1.375em;">
+            </label>
+          </div>
+        </div>
+
+     
+      
+        <div class="box">
+          <h2 class="text-center mb-4">انتخاب تاریخ و ساعت مشاوره</h2>
+          <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+            <input data-jdp placeholder="انتخاب تاریخ" style="border-radius: 10px;margin: 20px 0; text-align: right;">
+          </div>
+          <script>
+            jalaliDatepicker.startWatch({
+                minDate: "attr",
+                maxDate: "attr",
+                minTime: "attr",
+                maxTime: "attr",
+                hideAfterChange: false,
+                autoHide: true,
+                showTodayBtn: true,
+                showEmptyBtn: true,
+                topSpace: 10,
+                bottomSpace: 30,
+                dayRendering(opt,input){
+                    return {
+                        isHollyDay:opt.day==1
+                    }
+                }
+            });
+            
+            document.getElementById("aaa").addEventListener("jdp:change", function (e) { console.log(e) });
+        </script>
+          
+          <div class="d-flex flex-row">
+            <div class="form-check me-3">
+              <input class="form-check-input" type="radio" name="radioGroup" id="radio1">
+              <label class="form-check-label" for="radio1">15:00 - 16:00</label>
+            </div>
+            <div class="form-check me-3">
+              <input class="form-check-input" type="radio" name="radioGroup" id="radio2">
+              <label class="form-check-label" for="radio2">16:00 - 17:00</label>
+            </div>
+            <div class="form-check me-3">
+              <input class="form-check-input" type="radio" name="radioGroup" id="radio3">
+              <label class="form-check-label" for="radio3">17:00 - 18:00</label>
+            </div>
+            <div class="form-check me-3">
+              <input class="form-check-input" type="radio" name="radioGroup" id="radio4">
+              <label class="form-check-label" for="radio4">18:00 - 19:00</label>
+            </div>
+            <div class="form-check me-3">
+              <input class="form-check-input" type="radio" name="radioGroup" id="radio5">
+              <label class="form-check-label" for="radio5">19:00 - 20:00</label>
+            </div>
+            <div class="form-check me-3">
+              <input class="form-check-input" type="radio" name="radioGroup" id="radio5">
+              <label class="form-check-label" for="radio5">20:00 - 21:00</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="centered-card" style="margin-top: -13vh;">
+          <div class="card-container">
+            <div class="card-body p-4 text-center">
+              <div class="mb-md-5 mt-md-1">
+                <h2 class="fw-bold mb-5 text-uppercase  " style="font-size: 25px;">اطلاعات خود را تکمیل کنید</h2>
+                <div class="d-flex justify-content-center align-items-center" style="height: 50px;">
+                  <div class="form-outline form-white mb-3">
+                    <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="نام و نام خانوادگی" style="text-align: right;">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center" style="height: 50px;">
+                  <div class="form-outline form-white mb-3">
+                    <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="شماره تلفن" style="text-align: right;">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center mb-4" style="height: 50px;">
+                  <button class="btn btn-primary mr-2" style="height: 100%; border-radius: 10px; width: 120px;">ارسال کد</button>
+                  <div class="form-outline form-white mb-3" style="height: 100%; width: 140px;" >
+                    <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="کد تایید" style="text-align: right; height: 100%;">
+                  </div>
+                </div>
+                <div class="form-check d-flex justify-content-center align-items-center" style="margin-bottom:2px;">
+                  <input class="form-check-input" type="checkbox" value="" id="reservationCheckbox">
+                  <label class="form-check-label" for="reservationCheckbox">قبلا وقت رزرو کرده ام</label>
+                </div>
+                <button class="btn btn-outline-dark btn-lg px-4;" type="submit" style="margin-top: 10px;">ثبت درخواست</button>
+                <div class="d-flex justify-content-center text-center mt-3 pt-1">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container" style="background: linear-gradient(45deg, #cfbaf0, #a3c4f3, #90dbf4);border-radius: 20px;">
+          <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+            <div class="col mb-3">
+              <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+              </a>
+              <p class="text-body-secondary">© 2023</p>
+            </div>
+        
+        
+            <div class="col mb-3">
+              <h5>شبکه های اجتمایی ما</h5>
+              <ul class="nav flex-column justify-content-end">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Telegram</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Instagram</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Whatsapp</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Eitaa</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Rubika</a></li>
+              </ul>
+            </div>
+        
+        
+            <div class="col mb-3">
+              <h5>کلینیک را پیدا کنید</h5>
+              <ul class="nav flex-column justify-content-end">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Snapp</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Neshan</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Bale</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Google maps</a></li>
+              </ul>
+            </div>
+        
+            <div class="col mb-3">
+              <h5>با ما تماس بگیرید</h5>
+              <ul class="nav flex-column justify-content-end">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">09017702769</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">09039056050</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">پاسخگویی از ساعت 10 الی 21</a></li>
+              </ul>
+            </div>
+          </footer>
+        </div>
+
+
+      <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+    </body>
+</html>
