@@ -1,0 +1,48 @@
+{% extends "dashboard.html" %}
+{% load static %}
+
+{% block headers %}
+            {% for field in fields %}
+                {% if field == 'photo' %}
+                {% else %}
+                  <th scope="col" style="border: 1px solid black; border-collapse: collapse;">{{ field }}</th>
+                {% endif %}
+            {% endfor %}
+{% endblock headers %}
+
+{% block info %}
+{% for instance in instances %}
+<tr>
+    {% for k, v in instance.items %}
+    {% if v %}
+        {% if k == 'photo' %}
+        {% elif k == 'id' %}
+        <td scope="col" style="border: 1px solid black; border-collapse: collapse;">
+            <a href="{% url 'edit' model v %}">{{ v }}</a>
+        </td>
+        {% elif k == 'psychologist_id' %}
+        <td scope="col" style="border: 1px solid black; border-collapse: collapse;">
+            <a href="{% url 'edit' 'Psychologist' v %}">{{ v }}</a>
+        </td>
+        {% elif k == 'patient_id' %}
+        <td scope="col" style="border: 1px solid black; border-collapse: collapse;">
+            <a href="{% url 'edit' 'Patient' v %}">{{ v }}</a>
+        </td>
+        {% elif k == 'conditions_id' %}
+        <td scope="col" style="border: 1px solid black; border-collapse: collapse;">
+            <a href="{% url 'edit' 'Condition' v %}">{{ v }}</a>
+        </td>
+        {% elif k == 'amount' %}
+        <td scope="col" style="border: 1px solid black; border-collapse: collapse;">{{ v }} هزار تومان</td>
+        {% elif k == 'photo_logo' %}
+        <td scope="col" style="border: 1px solid black; border-collapse: collapse;"><img src="/media/{{ v }}" alt="Picture" class="img-thumbnail flex-shrink-0 remove-border" style="height: 50px;"></td>
+        {% else %}
+        <td scope="col" style="border: 1px solid black; border-collapse: collapse;">{{ v }}</td>
+        {% endif %}
+    {% else %}
+        <td scope="col" style="border: 1px solid black; border-collapse: collapse;">هنوز داده ای وارد نشده است</td>
+    {% endif %}
+    {% endfor %}
+</tr>
+{% endfor %}
+{% endblock info %}

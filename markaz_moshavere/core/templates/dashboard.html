@@ -1,0 +1,272 @@
+{% load static %}
+<!doctype html>
+<html lang="en" P align="right">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dashboard</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="font-family" href="https://fonts.googleapis.com/css?family=Sofia">
+
+  <style>
+    body {
+      font-family: "Sofia", sans-serif;
+    }
+    dialog::backdrop {
+      background-color: hsl(200, 100%, 69%, .1)
+    }
+      .sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, #8b73b2, #6389be, #29748e);
+    }
+    .table-container {
+     margin-top: 2cm;
+    }
+    .table-header {
+    text-align: center;
+    margin-bottom: 1cm;
+    margin-left: 18cm;
+    }
+    
+    </style>
+</head>
+
+<body style="background:linear-gradient(45deg, #cfbaf0, #a3c4f3, #90dbf4);">
+    <div class="sidebar" >
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="height: 100vh; width: 280px; background: linear-gradient(45deg, #8b73b2, #6389be, #29748e);">
+          <a href="#" class="d-flex align-items-center mb-3 mb-md-0 ms-md-auto link-body-emphasis text-decoration-none">
+            <img src="{% static 'photo_2024-01-04_16-40-35.jpg' %}" alt="Admin Image" class="admin-image me-2" style="border-radius: 40px ;width: 2cm;">
+            <span class="fs-4" style="margin-left: 20px;">پوریا اسدللهی</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+            <a href="{% url 'dash' 'Psychologist' %}" class="nav-link {% if curr_url == 'Psychologist' %}
+            active
+            {% else %}
+            link-body-emphasis
+            {% endif %}" aria-current="page">
+                <svg class="bi pe-none me-2" width="16" height="16"></svg>
+                مشاوران       
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="{% url 'dash' 'Patient' %}" class="nav-link l{% if curr_url == 'Patient' %}
+            active
+            {% else %}
+            link-body-emphasis
+            {% endif %}">
+                <svg class="bi pe-none me-2" width="16" height="16"></svg>
+                لیست مراجعین
+            </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'dash' 'Appointment' %}" class="nav-link {% if curr_url == 'Appointment' %}
+              active
+              {% else %}
+              link-body-emphasis
+              {% endif %}">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                  لیست نوبت ها
+              </a>
+              </li>
+            <li class="nav-item">
+            <a href="{% url 'dash' 'Dossier' %}" class="nav-link {% if curr_url == 'Dossier' %}
+            active
+            {% else %}
+            link-body-emphasis
+            {% endif %}">
+                <svg   svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                آرشیو پرونده ها
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="{% url 'dash' 'Condition' %}" class="nav-link {% if curr_url == 'Condition' %}
+            active
+            {% else %}
+            link-body-emphasis
+            {% endif %}">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                کد های تشخیص
+            </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'dash' 'patient_conditions' %}" class="nav-link {% if curr_url == 'patient_conditions' %}
+              active
+              {% else %}
+              link-body-emphasis
+              {% endif %}">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                  تشخیص مراجعین
+              </a>
+              </li>
+            <li class="nav-item">
+            <a href="{% url 'dash' 'Profit' %}" class="nav-link {% if curr_url == 'Profit' %}
+            active
+            {% else %}
+            link-body-emphasis
+            {% endif %}">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                کنترل درآمد
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="{% url 'dash' 'Treatment_Plan' %}" class="nav-link {% if curr_url == 'Treatment_Plan' %}
+            active
+            {% else %}
+            link-body-emphasis
+            {% endif %}">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                برنامه های درمانی
+            </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'dash' 'Medication' %}" class="nav-link {% if curr_url == 'Medication' %}
+              active
+              {% else %}
+              link-body-emphasis
+              {% endif %}">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                  برنامه دارویی
+              </a>
+              </li>
+            <li class="nav-item">
+            <a href="{% url 'dash' 'Insurance' %}" class="nav-link {% if curr_url == 'Insurance' %}
+            active
+            {% else %}
+            link-body-emphasis
+            {% endif %}">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                بیمه های مقبول
+            </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'dash' 'patient_insurance' %}" class="nav-link {% if curr_url == 'patient_insurance' %}
+              active
+              {% else %}
+              link-body-emphasis
+              {% endif %}">
+                  <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                  بیمه مراجعین
+              </a>
+              </li>
+          </ul>
+          <div class="mt-auto" style="height: 6.5cm;"></div>
+          <div class="d-flex justify-content-end">
+              <button onclick="window.location.href='{% url 'logout' %}'" class="btn btn-primary" style="width: 2cm;">خروج</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive small">
+        <div class="table-header" style="margin-bottom: 1cm;">
+          <h1 style="padding-left:10%;padding-bottom:30px; padding-top:60px; width:auto;border-radius : 30px ;background: linear-gradient(45deg, #8b73b2, #6389be, #29748e);margin-top:-1cm;margin-bottom: 1cm; margin-right:5cm;">{{ page_name }}</h1>
+          {% if edit %}
+          
+          {% else %}
+          <div class="d-flex justify-content-between align-items-center">
+            <form method="POST">{% csrf_token %}
+            <div class="input-group" style="width: 300px; margin-left: -16cm;">
+              <input autocomplete="off" name="query" type="search" class="form-control rounded" placeholder="فیلتر" aria-label="Search" aria-describedby="search-addon" />
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">اعمال فیلتر</button>
+              </div>
+            </div>
+          </form>
+            <button data-open-modal type="button" class="btn btn-primary" style="margin-right: 9cm;">اضافه کردن</button>
+            
+          </div>
+        </div>
+          {% endif %}
+        <dialog data-modal style="margin-top: 1cm; margin-left: 12cm; padding: 0.5rem; border-radius: 20px; background:#90dbf4; padding: 5%;">
+          <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+            {{ form.as_p }}
+            <button style="padding:3px 5px;" type="submit" value="Submit">ثبت</button>
+          </form>
+          <button data-close-modal style="padding:3px;">برگشت</button>
+        </dialog>
+        <table class="table table-striped table-sm ml-0" style="margin-left: 1cm; width: 30cm; border: 1px solid black; border-collapse: collapse;">
+          <thead>
+            <tr>
+              {% block headers %}{% endblock headers %}
+            </tr>
+          </thead>
+          <tbody>
+            {% block info %}{% endblock info %}
+          </tbody>
+          
+        </table>
+        {% block data %}
+        
+        {% endblock data %}
+        
+      {% if instances.has_other_pages %}
+    <ul style="margin-right:6.5cm;" class="pagination justify-content-center">
+        {% if instances.has_previous %}
+            <li class="page-link">
+                <a href="?page={{ instances.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-link disabled">
+                <span aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </span>
+            </li>
+        {% endif %}
+
+        {% for i in instances.paginator.page_range %}
+            {% if instances.number == i %}
+                <li class="page-link active">
+                    <span>{{ i }}</span>
+                </li>
+            {% else %}
+                <li class="page-link">
+                    <a href="?page={{ i }}">{{ i }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+        {% if instances.has_next %}
+            <li class="page-link">
+                <a href="?page={{ instances.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-link disabled">
+                <span aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </span>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+<script>
+
+const openButton = document.querySelector("[data-open-modal]")
+const closeButton = document.querySelector("[data-close-modal]")
+const modal = document.querySelector("[data-modal]")
+
+
+openButton.addEventListener("click", () => {
+  modal.showModal();
+})
+
+closeButton.addEventListener("click", () => {
+  modal.close()
+})
+
+  if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+  }
+
+</script>
+</body>
+</html>

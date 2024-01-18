@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/list-groups/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link rel="stylesheet" href="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css">
+    <script type="text/javascript" src="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"></script>
+{% endblock header %}
+
+    
+{% block data %}
+
+{% if message %}
+<div class="alert alert-warning justify-content-center" role="alert">
+  <strong>{{ message }}</strong>
+</div>
+{% endif %}
+
+<form autocomplete="off" method="POST">{% csrf_token %}
+
+<div class="box d-flex flex-column vh-70 justify-content-start align-items-center" style="width: 21.8cm; padding:1cm;">
+    <h2 class="text-center mb-4">انتخاب مشاور</h2>
+    <div class="list-group w-40" style="box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.5);">
+        {% for psycho in psychos %}
+        <label class="list-group-item d-flex gap-3 align-items-center" style="background-color: #cfbaf0;">
+            <img src="{{ psycho.photo_logo.url }}" alt="Picture" class="img-thumbnail flex-shrink-0 remove-border" style="width: 50px; height: 50px;">
+            <span class="pt-1 form-checked-content text-right" style="flex-grow: 1;">
+                <strong>دکتر {{psycho.f_name}} {{psycho.l_name}}</strong> 
+                ({{ psycho.specialty_field }})
+            </span>
+            <input type="radio" class="form-check-input" name="psych" value="{{ psycho.id }}" style="font-size: 1.375em;">
+            </label>
+        {% endfor %}
+    </div>
+    </div>
+
+    
+    <div class="box" style="padding:1cm 0;">
+    <h2 class="text-center mb-4">انتخاب تاریخ و ساعت مشاوره</h2>
+    <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+        <input name="date" data-jdp placeholder="انتخاب تاریخ" style="border-radius: 10px;margin: 20px 0; text-align: right;">
+    </div>
+    <script>
+        jalaliDatepicker.startWatch({
+            minDate: "attr",
+            maxDate: "attr",
+            minTime: "attr",
+            maxTime: "attr",
+            hideAfterChange: false,
+            autoHide: true,
+            showTodayBtn: true,
+            showEmptyBtn: true,
+            topSpace: 10,
+            bottomSpace: 30,
+            dayRendering(opt,input){
+                return {
+                    isHollyDay:opt.day==1
+                }
+            }
+        });
+            
+            document.getElementById("aaa").addEventListener("jdp:change", function (e) { console.log(e) });
+    </script>
+        
+    <div class="d-flex flex-row" style="justify-content: center;width:21.8cm;">
+        {% for hour in times %}
+            <div class="form-check me-2">
+                <input name="time" class="form-check-input" value="{{ hour.0 }}" type="radio" id="radio">
+                <label class="form-check-label" for="radio">{{ hour.1 }}</label>
+            </div>
+        {% endfor %}
+        
+    </div>
+    </div>
+
+    <div class="centered-card" style="margin-top: -13vh;">
+    <div class="card-container">
+        <div class="card-body p-4 text-center">
+        <div class="mb-md-5 mt-md-1">
+            <h2 class="fw-bold mb-5 text-uppercase  " style="font-size: 25px;">اطلاعات خود را تکمیل کنید</h2>
+            <div class="d-flex justify-content-center align-items-center" style="height: 50px;">
+            <div class="form-outline form-white mb-3">
+                <input name="f_name" type="text" id="typeEmailX" class="form-control form-control-lg" placeholder="نام" style="text-align: right;">
+            </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center" style="height: 50px;">
+                <div class="form-outline form-white mb-3">
+                    <input name="l_name" type="text" id="typeEmailX" class="form-control form-control-lg" placeholder="نام خانوادگی" style="text-align: right;">
+                </div>
+                </div>
+            <div class="d-flex justify-content-center align-items-center" style="height: 50px;">
+            <div class="form-outline form-white mb-3">
+                <input name="phone_number" type="tel" id="typeEmailX" class="form-control form-control-lg" placeholder="شماره تلفن" style="text-align: right;">
+            </div>
+            </div>
+            <div class="d-flex justify-content-center mb-4" style="height: 50px;">
+            <button class="btn btn-primary mr-2" style="height: 100%; border-radius: 10px; width: 120px;">ارسال کد</button>
+            <div class="form-outline form-white mb-3" style="height: 100%; width: 140px;" >
+                <input name="code" type="number" id="typeEmailX" class="form-control form-control-lg" placeholder="کد تایید" style="text-align: right; height: 100%;">
+            </div>
+            </div>
+            
+            <button  class="btn btn-outline-dark btn-lg px-4;" type="submit" style="margin-top: 10px;">ثبت درخواست</button>
+            <div class="d-flex justify-content-center text-center mt-3 pt-1">
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</form>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+{% endblock data %}

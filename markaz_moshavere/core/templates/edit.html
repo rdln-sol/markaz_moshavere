@@ -1,0 +1,12 @@
+{% extends "dashboard.html" %}
+{% block data %}
+
+<form style="margin-left:-25cm;margin-top:-1cm;" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+    <button style="padding:3px 5px;" type="submit" value="Submit">ثبت</button>
+    <button type="button" onclick="window.location.href='{% url 'dash' model %}'" style="padding:3px;">برگشت</button>
+  </form>
+  <form style="margin-left:-25cm;margin-top:0.5cm;" method="POST" action="{% url 'delete' model instance.id %}">{% csrf_token %}
+    <button value="Submit" type="sumbit" style="padding:3px 5px;">حذف</button>
+  </form>
+{% endblock data %}

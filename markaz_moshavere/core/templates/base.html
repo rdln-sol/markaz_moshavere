@@ -1,0 +1,112 @@
+{% load static %}
+<!doctype html>
+<html lang="en" P align="right">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>مرکز مشاوره</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Font -->
+    <style>
+      .base-logo:hover {
+        transform: scale(1.02);
+        }
+        @font-face {
+          font-family: Vazir;
+          src: local('Abc'),
+              url('../fonts/Vazir.eot');
+          src: local('Abc'),
+              url('FontName.eot?#iefix') format('Vazir-opentype'),
+              url('../fonts/Vazir.eot') format('eot'),
+              url('../fonts/Vazir.ttf') format('truetype'); 
+              url('../fonts/Vazir-Medium-FD.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }
+      </style>
+
+    <link href="https://cdn.rawgit.com/rastikerdar/samim-font/v4.0.5/dist/font-face.css" rel="stylesheet" type="text/css" />
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    
+    </head>
+    {% block header %}
+    {% endblock header %}
+  <body>
+    <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" style="margin-top: 1cm;background: linear-gradient(45deg, #cfbaf0, #a3c4f3, #90dbf4);border-radius: 20px;">
+          <div class="col-md-3 text-start" style="margin-left:20px">
+            {% if user.is_authenticated %}
+            <button type="button" onclick="window.location.href='{% url 'dash' 'Psychologist' %}'" class="btn btn-outline-primary me-4">داشبورد</button>
+            {% else %}
+            <button type="button" onclick="window.location.href='{% url 'index' %}'" class="btn btn-outline-primary me-4">خانه</button>
+            {% endif %}
+          </div>
+      
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#about" class="nav-link px-3">درباره ما</a></li>
+            <li><a rel="noopener" href="#psychologists" class="nav-link px-3">مشاوران</a></li>
+            <li><a href="{% url 'book' %}" class="nav-link px-3">رزرو وقت</a></li>
+          </ul>
+      
+          <div class="col-md-3 text-end">
+            {% if user.is_authenticated %}
+            <button type="button" onclick="window.location.href='{% url 'logout' %}'" class="btn btn-outline-primary me-4">خروج</button>
+            {% else %}
+                <button type="button" onclick="window.location.href='{% url 'login' %}'" class="btn btn-outline-primary me-4">ورود</button>
+            {% endif %}
+          </div>
+        </header>
+      </div>
+    {% block data %}
+    {% endblock data %}
+
+    <div class="container" style="background: linear-gradient(45deg, #cfbaf0, #a3c4f3, #90dbf4);border-radius: 20px;">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+        <div class="col mb-3" style="margin-left:2cm;margin-right:1cm;">
+          <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+          <p class="text-body-secondary"><a href="{% url 'index' %}"><img src="{% static 'Bahonar_university2.png' %}" alt="logo" class="flex-shrink-0 remove-border" style="height: 5cm;padding-left:-3cm;"></a></p>
+        </div>
+    
+    
+        <div class="col mb-4" style="margin-top:2cm;">
+          <h5>شبکه های اجتمایی ما</h5>
+          <ul class="nav flex-column justify-content-end">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Telegram</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Instagram</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Whatsapp</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Eitaa</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Rubika</a></li>
+          </ul>
+        </div>
+    
+    
+        <div class="col mb-3" style="margin-top:2cm;">
+          <h5>کلینیک را پیدا کنید</h5>
+          <ul class="nav flex-column justify-content-end">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Snapp</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Neshan</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Bale</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Google maps</a></li>
+          </ul>
+        </div>
+    
+        <div class="col mb-3" style="margin-top:2cm;">
+          <h5>با ما تماس بگیرید</h5>
+          <ul class="nav flex-column justify-content-end">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">09017702769</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">09039056050</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">پاسخگویی از ساعت 10 الی 21</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+
+</body>
+</html>

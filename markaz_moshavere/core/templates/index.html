@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock header %}
+{% block data %}
+
+<div class="container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="{% static 'Bahonar_university.png' %}" class="base-logo remove-border d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">کلینیک آبجوش</h1>
+      <p class="lead">مرکز مشاوره و مرکز روانشناسی آبجوش تخصصی ترین و بزرگترین مرکز روانشناسی و کلینیک روانشناسی در کرمان هست که خدمات ارزیابی و درمان اختلالات روانشناسی کودک، مشاوره روانشناسی نوجوان و بزرگسال و همچنین مشاوره خانواده، مشاوره ازدواج، مشاوره تحصیلی و شغلی، و فردی را در بالاترین کیفیت ممکن زیر نظر دکتر روانشناس خوب، باتجربه و متخصص در همان حیطه ارائه می دهد. منتظر حضور گرم شما در کلینیک روانشناسی آبجوش هستیم.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a type="button" href="{% url 'book' %}" class="btn btn-primary btn-lg px-4 me-md-2">رزرو وقت</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="row px-4py-5" style="padding-bottom:3cm;margin-bottom:10px;overflow:hidden; overflow-x:scroll;" >
+  <h2 class="pb-2 border-bottom" style="margin-bottom: 1.3cm;margin-left:-2.3cm;">مشاوران ما</h2>
+  <div class="col-lg-2"></div>
+  {% for psych in Psychologist %}
+  <div class="col-lg-3">
+    <a id="psychologists">
+        <div class="card my-card" style="width: 100%;">
+            <img class="card-img-top" src="{{ psych.photo.url }}" alt="Card image cap">
+            <div class="card-body" style="background:#90dbf4;">
+              <h5 class="card-title">دکتر {{ psych.f_name }} {{ psych.l_name }}</h5>
+              <p class="card-text">{{ psych.specialty_field }}</p>
+              <a href="{% url 'book' %}" class="btn btn-primary">رزرو وقت</a>
+            </div>
+          </div>
+        </a>
+        </div>
+        {% endfor %}
+      </div>
+<a id="about">
+<div class="container px-4py-5"  id="custom-cards" style="margin-bottom: 2cm;">
+<h2 class="pb-2 border-bottom" style="margin-bottom: 10px;">خدمات مرکز روانشانسی و کلینیک روانشانسی</h2>
+<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5" >
+  <div class="col">
+    <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg" style="background-color: #90dbf4">
+      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+        <h3 class="pt-3 mt-3 mb-4 display-6 lh-1 fw-bold">مرکز مشاوره تحصیلی، مشاوره کنکور، شغلی و موفقیت</h3>
+        <ul class="d-flex list-unstyled mt-auto">
+          <li class="d-flex align-items-center me-3">
+            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+            <small>کرمان</small>
+          </li>
+          <li class="d-flex align-items-center">
+            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+            <small>خیابان شفا، ساختمان تجاری پزشکی شفا،واحد دوم</small>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg" style="background-color: #a3c4f3 ">
+      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+        <h3 class="pt-3 mt-3 mb-4 display-6 lh-1 fw-bold">مرکز تست هوش و استعدادیابی کودک و نوجوان و تست شخصیت</h3>
+        <ul class="d-flex list-unstyled mt-auto">
+          
+          <li class="d-flex align-items-center me-3">
+            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+            <small>کرمان</small>
+          </li>
+          <li class="d-flex align-items-center">
+            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+            <small>خیابان شفا، ساختمان تجاری پزشکی شفا،واحد سوم</small>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg" style="background-color: #cfbaf0;">
+      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+        <h3 class="pt-3 mt-3 mb-4 display-6 lh-1 fw-bold">مرکز مشاوره و روانشناسی کودک و مشاوره نوجوان، روانشناس کودک</h3>
+        <ul class="d-flex list-unstyled mt-auto">
+        
+          <li class="d-flex align-items-center me-3">
+            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+            <small>کرمان</small>
+          </li>
+          <li class="d-flex align-items-center">
+            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+            <small>خیابان شفا، ساختمان تجاری پزشکی شفا،واحد دوم</small>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container col-xxl-8 px-4 py-5" style="margin-bottom: 3cm;border-radius:20px;background: linear-gradient(45deg, #cfbaf0, #a3c4f3, #90dbf4);">
+  <div class="row flex-lg-row-reverse align-items-center g-6 py-6">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <a href="https://www.google.com/maps/place/%D9%85%D8%AC%D8%AA%D9%85%D8%B9+%D8%AA%D8%AC%D8%A7%D8%B1%DB%8C+%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C+%D8%B4%D9%81%D8%A7%E2%80%AD/@30.290123,57.0286309,15z/data=!4m6!3m5!1s0x3f0218bc701ab9bf:0xfd4d5a9f64d96621!8m2!3d30.290123!4d57.0286309!16s%2Fg%2F11bymvprr9?entry=ttu"><img src="{% static 'map.png' %}" style="border-radius:20px;box-shadow: 0 0 7px rgba(106,17,203,1);"class="base-logo remove-border d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"></a>
+    </div>
+    <div class="col-lg-6">
+      <h6 class="display-8 fw-bold text-body-emphasis lh-1 mb-3">آبجوش را پیدا کنید</h6>
+      <h6 class="display-8 text-body-emphasis lh-1 mb-3">کرمان٬انتهای بلوار شفا٬ بعد از کوچه ٬مجتمع پزشکی و تجاری شفا،طبقه سوم٬ درب سوم سمت راست٬ کلینیک تخصصی آبجوش </h6>
+      <div class="logo-container">
+        <img src="{% static 'Snapp.png' %}" alt="Logo 1" class="logo">
+        <a href="https://neshan.org/maps/places/22ab91e0f555059c47b6e28a4a039370/%DA%A9%D8%B1%D9%85%D8%A7%D9%86+%D9%85%D8%AC%D8%AA%D9%85%D8%B9+%D8%AA%D8%AC%D8%A7%D8%B1%DB%8C+%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C+%D8%B4%D9%81%D8%A7"><img src="{% static 'Neshan.png' %}" alt="Logo 2" class="logo"></a>
+        <a href="https://www.google.com/maps/place/%D9%85%D8%AC%D8%AA%D9%85%D8%B9+%D8%AA%D8%AC%D8%A7%D8%B1%DB%8C+%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C+%D8%B4%D9%81%D8%A7%E2%80%AD/@30.290123,57.0286309,15z/data=!4m6!3m5!1s0x3f0218bc701ab9bf:0xfd4d5a9f64d96621!8m2!3d30.290123!4d57.0286309!16s%2Fg%2F11bymvprr9?entry=ttu"><img src="{% static 'maps.png' %}" alt="Logo 3" class="logo"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</a>
+
+{% endblock data %}
